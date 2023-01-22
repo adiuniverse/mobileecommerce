@@ -1,0 +1,51 @@
+{% extends 'user/master.html' %}
+{% load static %}
+{% block title %}home{% endblock %} 
+{% block link %}
+<link rel="stylesheet"  href="{% static 'css/cushome.css' %}">
+{% endblock %}
+ </head>
+<body>
+    {% block content %}
+        
+    </section>
+
+    <h1 class="pheading">View Products</h1>
+
+    <section class="sec">
+        <div class="products">
+           {% for p in product_list %}
+                 <!-- card start -->
+                 <div class="card">
+                    <div class="img"><img src="{{p.image.url}}"></div>
+                    <div class="desc">{{p.name}}</div>
+                    <div class="desc">{{p.brand}}</div>
+                    <div class="title">Rs{{p.rate}}</div>
+                    <div class="box">
+                        
+                      <a class="btn" href="{% url 'customer:productdetails' p.id  %}">View</a> 
+                         
+                     </div>    
+                 </div>
+            {% endfor %}
+                 <!-- card end -->
+            
+             
+            
+               
+                
+          
+             
+            
+           
+ 
+           
+
+        </div>
+
+    </section>
+
+   {% endblock %}
+    
+</body>
+</html>

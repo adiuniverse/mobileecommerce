@@ -1,0 +1,24 @@
+{% load static %}
+
+    <title>{% block title %}{% endblock %}</title>
+    <link> {% block link %}{% endblock %}</link>
+    <link rel="stylesheet"  href="{% static 'css/cushome.css' %}">
+</head>
+<body>
+   <nav class="navbar">
+        <div class="logo"><h1>ECOMMERCE</h1></div>
+        <ul class="menu">
+            <li><a href="{% url 'common:master' %}"></a></li>
+            <li><a href="{% url 'common:home' %}">Home</a></li>
+            <li><a href="{% url 'common:customerregister' %}">CustomerRegister</a></li>
+            <li><a href="{% url 'common:customerlogin' %}">CustomerLogin</a></li>
+            <li><a href="{% url 'common:eadminregister' %}">EadminRegister</a></li>
+            <li><a href="{% url 'common:eadminlogin' %}">EadminLogin</a></li>
+           
+       </ul>
+    </nav>  
+    {% block content %} 
+    {% endblock %}
+
+</body>
+</html>

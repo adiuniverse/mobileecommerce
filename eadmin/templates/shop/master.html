@@ -1,0 +1,28 @@
+{% load static %}
+ 
+    <title>{% block title %}{% endblock %}</title>
+    <link>{% block link %}{% endblock %}</link>
+    <link rel="stylesheet"  href="{% static 'css/cushome.css' %}">
+ </head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><h1>ECOMMERCE</h1></div>
+        <ul class="menu">
+            <li><a href="{% url 'eadmin:master' %}"></a></li>
+            <li><a href="{% url 'eadmin:home' %}">Home</a></li>
+            <li><a href="{% url 'eadmin:viewcustomer' %}">ViewCustomer</a></li>
+            <li><a href="{% url 'eadmin:register' %}">Register</a></li>
+            <li><a href="{% url 'eadmin:manageproduct' %}">ManageProducts</a></li>
+            <li><a href="{% url 'eadmin:managepurchase' %}">ManagePurchase</a></li>
+            <li><a href="{% url 'eadmin:logout' %}">Logout</a></li>
+           
+          
+          
+            
+            
+</ul>
+       
+    </nav>
+
+    {% block content %}
+    {% endblock %}
